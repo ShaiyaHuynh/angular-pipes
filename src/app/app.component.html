@@ -1,0 +1,44 @@
+<h3>DatePipe</h3>
+<p>{{ currentDate }}</p>
+<p>{{ currentDate | date }}</p>
+<p>{{ currentDate | date: 'shortDate' }}</p>
+<p>{{ currentDate | date: 'longDate' }}</p>
+<p>{{ currentDate | date: 'cccc, yyyy-MM-dd a' }}</p>
+<p>{{ today | date: 'yyyy-MM-dd' }}</p>
+
+<h3>UpperCasePipe</h3>
+<p>{{ 'In Hoa Toan Bo' | uppercase }}</p>
+<p>{{ 'Chu thuong' | lowercase }}</p>
+<p>{{ 'In Hoa ky tu dau' | titlecase }}</p>
+
+<h3>CurrencyPipe: format number</h3>
+<!--output '$0.26'-->
+<p>A1: {{ a | currency }}</p>
+
+<!--output 'CA$0.26'-->
+<p>A2: {{ a | currency: 'CAD' }}</p>
+
+<!--output 'CAD0.26'-->
+<p>A3: {{ a | currency: 'CAD':'code' }}</p>
+
+<!--output 'CA$0,001.35'-->
+<p>B1: {{ b | currency: 'CAD':'symbol':'4.2-2' }}</p>
+
+<!--output '$0,001.35'-->
+<p>B2: {{ b | currency: 'CAD':'symbol-narrow':'4.2-2' }}</p>
+
+<!--output '0 001,35 CA$'-->
+<p>B3: {{ b | currency: 'CAD':'symbol':'4.2-2':'fr' }}</p>
+
+<!--output 'CLP1' because CLP has no cents-->
+<p>B4: {{ b | currency: 'CLP' }}</p>
+
+<h3>CPercentPipe</h3>
+<!--output '26%'-->
+<p>A: {{ a | percent }}</p>
+
+<!--output '0,134.950%'-->
+<p>B: {{ b | percent: '4.3-5' }}</p>
+
+<!--output '0 134,950 %'-->
+<p>B: {{ b | percent: '4.3-5':'fr' }}</p>
