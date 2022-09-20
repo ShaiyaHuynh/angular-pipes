@@ -1,4 +1,5 @@
 import { Component, VERSION } from '@angular/core';
+import { users } from './users';
 
 @Component({
   selector: 'my-app',
@@ -12,4 +13,28 @@ export class AppComponent {
 
   a: number = 0.259;
   b: number = 1.3495;
+  user = {
+    id: 1,
+    firstName: 'Flora',
+    lastName: 'Twell',
+    email: 'ftwell0@phoca.cz',
+    gender: 'Female',
+    ipAddress: '99.180.237.33',
+  };
+
+  users = users;
+
+  AddUser() {
+    this.users = [
+      ...this.users,
+      {
+        id: 5,
+        firstName: 'Flora',
+        lastName: 'Twell',
+        email: 'ftwell0@phoca.cz',
+        gender: 'Male',
+        ipAddress: '99.180.237.33',
+      },
+    ];
+  }
 }

@@ -4,7 +4,6 @@
 <p>{{ currentDate | date: 'shortDate' }}</p>
 <p>{{ currentDate | date: 'longDate' }}</p>
 <p>{{ currentDate | date: 'cccc, yyyy-MM-dd a' }}</p>
-import { FormatUserPipe } from './format-user.pipe';
 <p>{{ today | date: 'yyyy-MM-dd' }}</p>
 
 <h3>UpperCasePipe</h3>
@@ -46,3 +45,21 @@ import { FormatUserPipe } from './format-user.pipe';
 
 <h3>Other</h3>
 <p>{{ user | json }}</p>
+<!-- My name's Quynh and I'm 35 years old. -->
+
+<p>{{ user | formatUser: true }}</p>
+
+<div *ngFor="let user of users">
+  <p>{{ user | formatUser: true }}</p>
+</div>
+<br />
+<h3>Hien thi nhung doi tuong la Nu</h3>
+<div *ngFor="let user of users | filterUser: 'Female'">
+  <p>{{ user | formatUser: true }}</p>
+</div>
+<br />
+<h3>Hien thi nhung doi tuong la Nam</h3>
+<div *ngFor="let user of users | filterUser: 'Male'">
+  <p>{{ user | formatUser: true }}</p>
+</div>
+<button (click)="AddUser()">Add user</button>
