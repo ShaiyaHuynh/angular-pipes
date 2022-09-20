@@ -4,6 +4,7 @@
 <p>{{ currentDate | date: 'shortDate' }}</p>
 <p>{{ currentDate | date: 'longDate' }}</p>
 <p>{{ currentDate | date: 'cccc, yyyy-MM-dd a' }}</p>
+import { FormatUserPipe } from './format-user.pipe';
 <p>{{ today | date: 'yyyy-MM-dd' }}</p>
 
 <h3>UpperCasePipe</h3>
@@ -28,7 +29,7 @@
 <p>B2: {{ b | currency: 'CAD':'symbol-narrow':'4.2-2' }}</p>
 
 <!--output '0 001,35 CA$'-->
-<p>B3: {{ b | currency: 'CAD':'symbol':'4.2-2':'fr' }}</p>
+<!-- <p>B3: {{ b | currency: 'CAD':'symbol':'4.2-2':'fr' }}</p> -->
 
 <!--output 'CLP1' because CLP has no cents-->
 <p>B4: {{ b | currency: 'CLP' }}</p>
@@ -41,4 +42,7 @@
 <p>B: {{ b | percent: '4.3-5' }}</p>
 
 <!--output '0 134,950 %'-->
-<p>B: {{ b | percent: '4.3-5':'fr' }}</p>
+<!-- <p>B: {{ b | percent: '4.3-5':'fr' }}</p> -->
+
+<h3>Other</h3>
+<p>{{ user | json }}</p>
